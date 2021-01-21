@@ -1,0 +1,61 @@
+{%extends 'core/base.html'%}
+{% load humanize %}
+{% block content %}
+    <div class="container">
+        <div class="columns">
+            <div class="column is-12">
+                <h1 class="title">{{user.username}}</h1>
+
+                {% if user.RotFrontprofile.avatar %}
+                    <figure class="image is-128x128">
+                        <img src="{{ user.RotFrontprofile.avatar.url }}">
+                    </figure>
+                {% endif %}
+
+                <hr>
+
+                <P><a href="{% url 'followers' user.username %}">Followers: {{ user.RotFrontprofile.followed_by.count }}</a></P>
+                <p><a href="{% url 'follows' user.username %}">Follows: {{ user.RotFrontprofile.follows.count }}</a></p>
+
+                {% if user != request.user %}
+                    {% if request.user.RotFrontprofile in user.RotFrontprofile.followed_by.all %}
+                        <a href="{% url 'unfollow_roter' user.username %}" class="button is-danger">Unfollow</a>
+                    {% else %}
+                        <a href="{% url 'follow_roter' user.username %}" class="button is-success">Follow</a>
+                    {% endif %}
+                {% endif %}
+            </div>
+        </div>
+        
+        <div class="columns">
+            <div class="column is-8">
+                <div class="wrapper-rots">
+                    {% for rot in user.rots.all %}
+                    <div class="rot">
+                        <article class="media">
+                            <figure class="media-left">
+                                <p class="image is-64x64">
+                                    {% if user.RotFrontprofile.avatar %}
+                                        <img src="{{ user.RotFrontprofile.avatar.url }}">
+                                    {% endif %}
+                                </p>
+                            </figure>
+
+                            <div class="media-content">
+                                <div class="content">
+                                    <p>
+                                        <strong>{{rot.created_by.username}}</strong>
+                                        <small>{{rot.created_at|naturaltime}}</small>
+                                        <br>
+                                        {{rot.body}}
+                                    </p>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

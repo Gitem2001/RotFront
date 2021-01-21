@@ -1,0 +1,1 @@
+web: gunicorn RotFront.wsgi --log-file -
