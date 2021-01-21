@@ -43,7 +43,6 @@ INSTALLED_APPS = [
     'apps.core',
     'apps.feed',
     'apps.RotFrontprofile',
-
 ]
 
 MIDDLEWARE = [

@@ -11,14 +11,14 @@
                         <img src="{{ user.RotFrontprofile.avatar.url }}">
                     </figure>
                 {% endif %}
-
-                <hr>
+				<br>
+                <hr style="background: #3298dc;">
 
                 <form method="post" enctype="multipart/form-data" action=".">
                     {% csrf_token %}
 
                     {{ form.as_p }}
-
+					<br>
                     <div class="field">
                         <div class="control">
                             <button class="button is-success">Save changes</button>

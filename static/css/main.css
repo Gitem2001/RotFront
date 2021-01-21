@@ -1,23 +1,19 @@
-body {
-    background: #F9F9F9;
-}
-
 .wrapper-rots {
     margin-top: 30px;
 }
 
-    .wrapper-rots .rot {
-        margin-bottom: 10px;
-        padding: 20px;
-        border-radius: 4px;
-        background: white;
-    }
+.wrapper-rots .rot {
+	margin-bottom: 10px;
+	padding: 20px;
+	border-radius: 4px;
+	background: white;
+}
 
-    .wrapper-rots .rot .name {
-        font-weight: bold;
-    }
+.wrapper-rots .rot .name {
+	font-weight: bold;
+}
 
-    .wrapper-rots .rot .info {
-        font-size: 12px;
-        color: #AAA;
-    }
+.wrapper-rots .rot .info {
+	font-size: 12px;
+	color: #AAA;
+}
