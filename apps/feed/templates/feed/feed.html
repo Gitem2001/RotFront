@@ -26,9 +26,9 @@
 					<div class="rot" v-for="rot in rots">
 							<article class="media">
 								<figure class="media-left">
-									<p class="image is-64x64">
+									<div class="image is-64x64" style="border: 2px solid #3298dc;">
 										<img :src="rot.avatar">
-									</p>
+									</div>
 								</figure>
 
 								<div class="media-content">
@@ -47,11 +47,11 @@
                         <div class="rot">
                             <article class="media">
                                 <figure class="media-left">
-                                    <p class="image is-64x64">
+                                    <div class="image is-64x64" style="border: 2px solid #3298dc;">
                                         {% if rot.created_by.RotFrontprofile.avatar %}
                                             <img src="{{ rot.created_by.RotFrontprofile.avatar.url }}">
                                         {% endif %}
-                                    </p>
+                                    </div>
                                 </figure>
     
                                 <div class="media-content">

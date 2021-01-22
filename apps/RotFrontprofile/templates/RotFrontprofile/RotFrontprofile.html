@@ -7,9 +7,9 @@
                 <h1 class="title">{{user.username}}</h1>
 
                 {% if user.RotFrontprofile.avatar %}
-                    <figure class="image is-128x128">
+                    <div class="image is-128x128" style="border: 2px solid #3298dc;">
                         <img src="{{ user.RotFrontprofile.avatar.url }}">
-                    </figure>
+                    </div>
                 {% endif %}
 
                 <hr style="background: #3298dc;">
@@ -36,11 +36,11 @@
                     <div class="rot">
                         <article class="media">
                             <figure class="media-left">
-                                <p class="image is-64x64">
+                                <div class="image is-64x64" style="border: 2px solid #3298dc;">
                                     {% if user.RotFrontprofile.avatar %}
                                         <img src="{{ user.RotFrontprofile.avatar.url }}">
                                     {% endif %}
-                                </p>
+                                </div>
                             </figure>
 
                             <div class="media-content">
