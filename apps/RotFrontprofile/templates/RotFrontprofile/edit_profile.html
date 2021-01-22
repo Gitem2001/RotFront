@@ -7,9 +7,9 @@
                 <h1 class="title">Edit profile</h1>
 
                 {% if user.RotFrontprofile.avatar %}
-                    <figure class="image is-128x128">
+                    <div class="image is-128x128" style="border: 2px solid #3298dc;">
                         <img src="{{ user.RotFrontprofile.avatar.url }}">
-                    </figure>
+                    </div>
                 {% endif %}
 				<br>
                 <hr style="background: #3298dc;">
