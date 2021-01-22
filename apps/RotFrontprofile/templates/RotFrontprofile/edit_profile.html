@@ -8,7 +8,7 @@
 
                 {% if user.RotFrontprofile.avatar %}
                     <div class="image is-128x128" style="border: 2px solid #3298dc;">
-                        <img src="{{ user.RotFrontprofile.avatar.url }}">
+                        <img src="{{ user.RotFrontprofile.avatar.url }}" style="width:100%;height:100%;object-fit:cover;">
                     </div>
                 {% endif %}
 				<br>

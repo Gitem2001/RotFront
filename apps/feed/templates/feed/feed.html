@@ -27,7 +27,7 @@
 							<article class="media">
 								<figure class="media-left">
 									<div class="image is-64x64" style="border: 2px solid #3298dc;">
-										<img :src="rot.avatar">
+										<img :src="rot.avatar" style="width:100%;height:100%;object-fit:cover;">
 									</div>
 								</figure>
 
@@ -49,7 +49,7 @@
                                 <figure class="media-left">
                                     <div class="image is-64x64" style="border: 2px solid #3298dc;">
                                         {% if rot.created_by.RotFrontprofile.avatar %}
-                                            <img src="{{ rot.created_by.RotFrontprofile.avatar.url }}">
+                                            <img src="{{ rot.created_by.RotFrontprofile.avatar.url }}" style="width:100%;height:100%;object-fit:cover;">
                                         {% endif %}
                                     </div>
                                 </figure>
