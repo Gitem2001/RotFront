@@ -8,9 +8,7 @@
             <div class="column is-12">
                 <h1 class="title">Search</h1>
 
-                <p>Search term: "{{ query }}"</p>
-
-                <hr>
+                <hr style="background: #3298dc;">
 
                 <form method="GET" action="{% url 'search' %}">
                     <div class="field">
@@ -24,11 +22,11 @@
                     </div>
                 </form>
 
-                <hr>
+                <hr style="background: #3298dc;">
 
                 <div class="search-results">
                     {% for roter in roters %}
-                        <p><a href="{% url 'RotFrontprofile' roter.username %}">{{ roter.username }}</a></p>
+                        <p style="font-size: 20px;"><a href="{% url 'RotFrontprofile' roter.username %}">{{ roter.username }}</a></p>
                     {% endfor %}
                 </div>
             </div>

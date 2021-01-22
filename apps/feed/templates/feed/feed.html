@@ -10,7 +10,7 @@
                     <form v-on:submit.prevent="submitRot()">
                         <div class="field">
                             <div class="control">
-                                <textarea class="textarea" v-model="body" placeholder="What are you roting?"></textarea>
+                                <textarea class="textarea" rows="2" minlength="1" maxlength="255" v-model="body" placeholder="What are you roting?" style="resize:none;"></textarea>
                             </div>
                         </div>
 
@@ -23,21 +23,41 @@
                 </div>
 
                 <div class="wrapper-rots">
+					<div class="rot" v-for="rot in rots">
+							<article class="media">
+								<figure class="media-left">
+									<div class="image is-64x64" style="border: 2px solid #3298dc;">
+										<img :src="rot.avatar" style="width:100%;height:100%;object-fit:cover;">
+									</div>
+								</figure>
+
+								<div class="media-content">
+									<div class="content">
+										<p>
+											<strong><a href="{% url 'RotFrontprofile' request.user.username %}">{{ request.user.username }}</a></strong>
+											<small>[[ rot.created_at ]]</small>
+											<br>
+											[[ rot.body ]]
+										</p>
+									</div>
+								</div>
+							</article>
+						</div>
                     {% for rot in rots %}
                         <div class="rot">
                             <article class="media">
                                 <figure class="media-left">
-                                    <p class="image is-64x64">
+                                    <div class="image is-64x64" style="border: 2px solid #3298dc;">
                                         {% if rot.created_by.RotFrontprofile.avatar %}
-                                            <img src="{{ rot.created_by.RotFrontprofile.avatar.url }}">
+                                            <img src="{{ rot.created_by.RotFrontprofile.avatar.url }}" style="width:100%;height:100%;object-fit:cover;">
                                         {% endif %}
-                                    </p>
+                                    </div>
                                 </figure>
     
                                 <div class="media-content">
                                     <div class="content">
                                         <p>
-                                            <strong>{{rot.created_by.username}}</strong>
+                                            <strong><a href="{% url 'RotFrontprofile' rot.created_by.username %}">{{rot.created_by.username}}</a></strong>
                                             <small>{{rot.created_at|naturaltime}}</small>
                                             <br>
                                             {{rot.body}}
@@ -47,26 +67,6 @@
                             </article>
                         </div>
                     {% endfor %}
-                    <div class="rot" v-for="rot in rots">
-                        <article class="media">
-                            <figure class="media-left">
-                                <p class="image is-64x64">
-                                    <img :src="rot.avatar">
-                                </p>
-                            </figure>
-
-                            <div class="media-content">
-                                <div class="content">
-                                    <p>
-                                        <strong>[[ rot.roter ]]</strong>
-                                        <small>[[ rot.created_at ]]</small>
-                                        <br>
-                                        [[ rot.body ]]
-                                    </p>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
                 </div>
 
             </div>

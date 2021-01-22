@@ -5,9 +5,10 @@
         <div class="columns">
             <div class="column is-12">
                 <h1 class="title">Followers - {{user.username}}</h1>
-                <p>Num: {{user.RotFrontprofile.followed_by.count}}</p>
+                <p>Followers: {{user.RotFrontprofile.followed_by.count}}</p>
             </div>
         </div>
+		<hr style="background: #3298dc;">
         <div class='columns'>
             <div class="column is-8">
                 {% for roter in user.RotFrontprofile.followed_by.all %}
